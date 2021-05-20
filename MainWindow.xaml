@@ -1,0 +1,42 @@
+﻿<Window x:Class="Lab_2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab_2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition />
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="2*"/>
+			<ColumnDefinition Width="3*"/>
+		</Grid.ColumnDefinitions>
+		
+		<ToolBar x:Name="toolBar" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Top">
+			<Menu>
+				<MenuItem Header="_File">
+					<MenuItem x:Name="itemOpen" Header="Open..." Click="itemOpen_Click" />
+					<Separator />
+					<MenuItem x:Name="itemExit" Header="Exit" Click="itemExit_Click" />
+				</MenuItem>
+			</Menu>
+		</ToolBar>
+		<Grid Grid.Row="1" Grid.Column="0">
+			<Grid.RowDefinitions>
+				<RowDefinition />
+				<RowDefinition Height="Auto" />
+			</Grid.RowDefinitions>
+			<TreeView x:Name="treeView" Grid.Row="0" SelectedItemChanged="treeView_SelectedItemChanged" />
+			<StatusBar Grid.Row="1">
+				<TextBlock x:Name="rash" />
+			</StatusBar>
+		</Grid>
+		<ScrollViewer Grid.Row="1" Grid.Column="1">
+			<TextBlock x:Name="textBlock" Text="TextBlock"/>
+		</ScrollViewer>
+	</Grid>
+</Window>
